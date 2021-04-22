@@ -32,6 +32,23 @@ class Game {
     form.hide();
     textSize(30);
     text("Game Start", 120, 100)
+    Player.getPlayerInfo()
+
+    var y=130;
+    for (var p in allPlayers){
+       if(p==="player"+player.index)
+       fill("red")
+       else
+       fill(0)
+        y+=20
+        textSize(15)
+        text(allPlayers[p].name+": "+allPlayers[p].distance,120,y)
+    }
+
+    if(keyIsDown(UP_ARROW)&&player.index!==null){
+      player.distance+=50;
+      player.update();
+    }
    
 }
 }
